@@ -1,1 +1,1 @@
-#Python lessons with Alx, this is another part of a new challenge, This project is going to contain all the lessons from basic python to advanced, i will update this README.md file later on. keep calm
+# Python lessons with Alx, This is another part of a new challenge, This project is going to contain all the lessons from basic Python to advanced, I will update this README.md file later on. keep calm
