@@ -2,6 +2,10 @@
 
 """ Class that defines a square """
 class Square:
+    """
+    A square class with a private attribute.
+    Confirms that size is type int and not a negative integer,else raise error.
+    """
 
     def __init__(self, size=0):
 
