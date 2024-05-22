@@ -1,6 +1,6 @@
-#0x0D. SQL - Introduction SQL
+# 0x0D. SQL - Introduction SQL
 
-#General learning Objectives
+# General learning Objectives
 
    - What’s a database
    - What’s a relational database
