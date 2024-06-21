@@ -30,11 +30,11 @@ if __name__=='__main__':
             db=sys.argv[3]
             )
 
-    # get the cursor for to interact with DB
+    # get the cursor to interact with DB
     cur=db.cursor()
 
     # query to retrieve all states ordered by id
-    cur.execute('SELECT id, name FROM states ORDER BY id ASC limit 5')
+    cur.execute('SELECT * FROM states ORDER BY states.id ASC')
 
     # retrieve rows
     rows=cur.fetchall()
