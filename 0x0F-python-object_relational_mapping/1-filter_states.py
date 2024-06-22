@@ -25,7 +25,7 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     #querey to grab states starting with 'N'
-    cur.execute("""SELECT id,name FROM states WHERE
+    cur.execute("""SELECT *  FROM states WHERE
                 name LIKE 'N%' ORDER BY states.id ASC""")
 
     # show all rows
