@@ -44,7 +44,7 @@ if __name__ == '__main__':
             FROM states
             WHERE name
             LIKE 'N%'
-            ORDER BY id ASC
+            ORDER BY states.id ASC
             """)
 
     #get the rows
