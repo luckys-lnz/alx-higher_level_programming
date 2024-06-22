@@ -30,7 +30,7 @@ if __name__=='__main__':
         WHERE name
         LIKE 'N%'
         ORDER BY states.id ASC
-        """)
+    """)
 
     # show all rows
     rows = cur.fetchall()
