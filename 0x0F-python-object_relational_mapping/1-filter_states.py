@@ -8,7 +8,7 @@ by states.id. Also accepts 3 arguments
 import sys
 import MySQLdb
 
-if __name__=='main__':
+if __name__=='__main__':
     """
     Script to connect and interact with database
     """
@@ -30,11 +30,12 @@ if __name__=='main__':
         WHERE name
         LIKE 'N%'
         ORDER BY states.id ASC
-    """)
+        """)
 
     # show all rows
     rows = cur.fetchall()
 
+    #iterate rows in state table
     for row in rows:
         print(row)
 
