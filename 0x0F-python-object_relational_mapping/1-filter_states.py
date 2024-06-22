@@ -8,7 +8,8 @@ by states.id. Also accepts 3 arguments
 import sys
 import MySQLdb
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     """
     Script to connect and interact with database
     """
@@ -24,13 +25,8 @@ if __name__=='__main__':
     cur = db.cursor()
 
     #querey to grab states starting with 'N'
-    cur.execute("""
-        SELECT id,name
-        FROM states
-        WHERE name
-        LIKE 'N%'
-        ORDER BY states.id ASC
-    """)
+    cur.execute("""SELECT id,name FROM states WHERE
+                name LIKE 'N%' ORDER BY states.id ASC""")
 
     # show all rows
     rows = cur.fetchall()
