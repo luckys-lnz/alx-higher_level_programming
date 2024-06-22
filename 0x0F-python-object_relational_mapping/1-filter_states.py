@@ -1,59 +1,44 @@
 #!/usr/bin/python3
 """
-script that lists all states with a name
-starting with N (upper N) from the
-database hbtn_0e_0_usa:
-
-Your script should take 3 arguments: mysql username,
-mysql password and database name
-(no argument validation needed)
-
-You must use the module MySQLdb (import MySQLdb)
-
-Your script should connect to a
-MySQL server running on localhost at port 3306
-
-Results must be sorted in ascending order by states.id
-
-Results must be displayed as they are in the example below
-Your code should not be executed when imported
+A script that prints the states starting
+with uppercase 'N' in a database and ordered
+by states.id. Also accepts 3 arguments
+(password, username, dbname)
 """
-
 import sys
 import MySQLdb
 
-if __name__ == '__main__':
+if __name__=='main__':
     """
-    Script to list all states starting
-    with the upper case (N)
+    Script to connect and interact with database
     """
-    db=MySQLdb.connect(
+    db = MySQLdb.connect(
             host='localhost',
             port=3306,
             user=sys.argv[1],
             passwd=sys.argv[2],
             db=sys.argv[3]
-            )
+    )
 
     # get cursor to interact with DB
-    cur=db.cursor()
+    cur = db.cursor()
 
-    # query to to get states with upper case' N'
+    #querey to grab states starting with 'N'
     cur.execute("""
-            SELECT id,name
-            FROM states
-            WHERE name
-            LIKE 'N%'
-            ORDER BY states.id ASC
-            """)
+        SELECT id,name
+        FROM states
+        WHERE name
+        LIKE 'N%'
+        ORDER BY states.id ASC
+    """)
 
-    #get the rows
-    rows=cur.fetchall()
+    # show all rows
+    rows = cur.fetchall()
 
-    # iterate through the rows to get states
     for row in rows:
         print(row)
 
-    # Close cursor and DB
+    # close Cursor and DB
     cur.close()
     db.close()
+
