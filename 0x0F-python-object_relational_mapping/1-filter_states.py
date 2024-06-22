@@ -5,8 +5,8 @@ with uppercase 'N' in a database and ordered
 by states.id. Also accepts 3 arguments
 (password, username, dbname)
 """
-import sys
 import MySQLdb
+import sys
 
 
 if __name__ == '__main__':
