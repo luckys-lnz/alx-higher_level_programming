@@ -6,10 +6,11 @@ of hbtn_0e_0_usa where name matches the argument.
 
 script takes 4 arguments.
 """
-import sys
 import MySQLdb
+import sys
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     """
     Script that connects to the Database
     """
