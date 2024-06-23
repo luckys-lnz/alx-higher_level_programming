@@ -10,8 +10,8 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     # construct the Database URL
-    db_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(argv[1],
-                                                    argv[2], argv[3])
+    db_url = "mysql+mysqldb://{}:{}@localhost:3306/{}"
+            .format(argv[1],argv[2], argv[3])
 
     # create sqlalchemy engine 
     engine = create_engine(db_url)
