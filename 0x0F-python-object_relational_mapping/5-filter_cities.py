@@ -18,15 +18,15 @@ if __name__ == '__main__':
     # get cursor to iteract with DB
     cur = db.cursor()
 
-    # query to search cities in states
+    cur = db.cursor()
     cur.execute("""SELECT cities.name FROM
                 cities INNER JOIN states ON states.id=cities.state_id
-                WHERE states.name=%s""", (sys.argv[4], ))
+                WHERE states.name=%s""", (sys.argv[4],))
 
-    # fetch rows
+    # fet all rows
     rows = cur.fetchall()
-    for row in rows:
-        print(row)
+    tmp = list(row[0] for row in rows)
+    print(*tmp, sep=", ")
 
     # close connections
     cur.close()
