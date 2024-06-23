@@ -8,9 +8,9 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+    db_url = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]))
-    Base.metadata.create_all(engine)
+    Base.metadata.create_all(db_url)
     Session = sessionmaker(bind=engine)
     session = Session()
     new_instance = session.query(State).filter_by(id=2).first()
