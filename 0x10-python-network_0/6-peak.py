@@ -1,23 +1,27 @@
 #!/usr/bin/bash
-"""Check the peak of integers."""
+"""Check for the peak of integers."""
 
 
 def find_peak(list_of_integers):
-    """ A function that returns the peak of integers in a list. """
+    """ A function that checks the peak of integers """
     if not list_of_integers:
         return None
 
-    return _find_peak(list_of_integers, 0, len(list_of_integers) - 1)
+    low, high = 0, len(list_of_integers) - 1
 
-def _find_peak(list_of_integers, left, right):
-    mid = (left + right) // 2
+    while low <= high:
+        mid = (low + high) // 2
 
-    if (mid == 0 or list_of_integers[mid - 1] <= list_of_integers[mid]) and \
-       (mid == len(list_of_integers) - 1 or list_of_integers[mid + 1] <= list_of_integers[mid]):
-        return list_of_integers[mid]
-
-    if mid > 0 and list_of_integers[mid - 1] > list_of_integers[mid]:
-        return _find_peak(list_of_integers, left, mid - 1)
-    else:
-        return _find_peak(list_of_integers, mid + 1, right)
-
+        # Check if mid is a peak
+        if (mid == 0 or list_of_integers[mid] >=
+                list_of_integers[mid - 1]) and \
+           (mid == len(list_of_integers) - 1 or list_of_integers[mid] >=
+                list_of_integers[mid + 1]):
+            return list_of_integers[mid]
+        elif mid > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
+            # Peak is likely on the left side
+            high = mid - 1
+        else:
+            # Peak is likely on the right side
+            low = mid + 1
+        return None
