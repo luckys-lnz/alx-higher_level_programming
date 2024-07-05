@@ -1,7 +1,3 @@
 #!/bin/bash
-
-URL="$1"
-EMAIL="test@gmail.com"
-SUBJECT="I will always be here for PLD"
-
-curl -s -X POST -d "email=$EMAIL&subject=$SUBJECT" "$URL"
+# Bash script that takes 2 args, email and subject, sends a POST request to the passed URL, and displays the body of the response
+curl -s -X POST -d "email=test@gmail.com&subject=I will always be here for PLD" "$1"
