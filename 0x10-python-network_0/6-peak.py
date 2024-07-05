@@ -1,4 +1,9 @@
+#!/usr/bin/python3
+"""Checks the peak in a list of numbers"""
+
+
 def find_peak(list_of_integers):
+    """Function that checks the peak of integers in a list"""
     if not list_of_integers:
         return None
     
