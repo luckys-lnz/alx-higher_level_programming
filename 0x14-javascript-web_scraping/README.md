@@ -9,7 +9,8 @@
 - [Modern JS](https://github.com/mbeaudru/modern-js-cheatsheet)
 
 # Learning Objectives
-- General
+**General**
+
 - Why JavaScript programming is amazing
 - How to manipulate JSON data
 - How to use request and fetch API
